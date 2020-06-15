@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather dashboard</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Added link to the moment library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
+</head>
+
+<body>
+    <!-- header starts-->>
+    <header>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4 text-center">Weather Dashboard</h1>
+            </div>
+        </div>
+    </header>
+    <!-- header ends-->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" id="search-pane">
+                    <div class="form-group">
+                        <label class="control-label" for="inputGroup">Search for a City: </label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="inputGroup" />
+                            <span class="input-group-addon">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12" id="current-day-pane">
+                                <h2>City Name <span>(Date)</span><span><img id="weather-symbol" src="#"
+                                            alt="weather symbol"></span></h2>
+                                <p>Temperature:<span id="current-temp"></span></p>
+                                <p>Humidity: <span id="current-humidity"></span></p>
+                                <p>Wind Speed: <span id="current-wind-speed"></span></p>
+                                <p>UV Index: <span id="current-uv-index"></span></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>5-Day Forecast</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="card forcast-card">
+                                <div class="card-body">
+                                    <h5 class="card-title forcast-card-title"></h5>
+                                    <img class="forcast-card-image" src="" alt="">
+                                    <p class="card-text">Temp: <span></span></p>
+                                    <p class="card-text">Humidity: <span></span></p>
+                                </div>
+                            </div>
+                            <div class="card forcast-card">
+                                <div class="card-body">
+                                    <h5 class="card-title forcast-card-title"></h5>
+                                    <img class="forcast-card-image" src="" alt="">
+                                    <p class="card-text">Temp: <span></span></p>
+                                    <p class="card-text">Humidity: <span></span></p>
+                                </div>
+                            </div>
+                            <div class="card forcast-card">
+                                <div class="card-body">
+                                    <h5 class="card-title forcast-card-title"></h5>
+                                    <img class="forcast-card-image" src="" alt="">
+                                    <p class="card-text">Temp: <span></span></p>
+                                    <p class="card-text">Humidity: <span></span></p>
+                                </div>
+                            </div>
+                            <div class="card forcast-card">
+                                <div class="card-body">
+                                    <h5 class="card-title forcast-card-title"></h5>
+                                    <img class="forcast-card-image" src="" alt="">
+                                    <p class="card-text">Temp: <span></span></p>
+                                    <p class="card-text">Humidity: <span></span></p>
+                                </div>
+                            </div>
+                            <div class="card forcast-card">
+                                <div class="card-body">
+                                    <h5 class="card-title forcast-card-title"></h5>
+                                    <img class="forcast-card-image" src="" alt="">
+                                    <p class="card-text">Temp: <span></span></p>
+                                    <p class="card-text">Humidity: <span></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer starts -->
+    <footer class="bottom">
+        <!-- Copyright starts-->
+        <div class="footer-copyright text-center py-3">
+            &copy; 2020 Copyright:
+            <a href="https://github.com/nitinmuk/" target="_blank">Nitin UWA Bootcamp</a>
+        </div>
+        <!-- Copyright ends-->
+    </footer>
+    <!-- Footer ends -->
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
