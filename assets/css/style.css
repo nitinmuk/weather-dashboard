@@ -2,25 +2,26 @@ body
 {
     background-color: rgb(243, 232, 232);
 }
-.jumbotron,.forcast-card,#current-day-pane
+h3
+{
+    color : cadetblue;
+}
+.jumbotron,.forcast-card
 {
     color: white;
     background-color: cadetblue;
     border-color: cadetblue;
 }
+#current-day-pane
+{
+    color : cadetblue;
+    background-color: white;
+    border-style: groove;
+    padding-left: 20px;
+}
+
 .forcast-card
 {
-    margin-left: 20px;
-}
-
-.search-pane
-{
-    background-color: blueviolet;
-}
-
-input.form-control 
-{
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-            border-radius: 4px;
+    padding-bottom: 10px;
+    padding-left: 5px;
 }
