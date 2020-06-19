@@ -6,7 +6,24 @@ h3
 {
     color : cadetblue;
 }
-.jumbotron,.forcast-card
+ul 
+{
+    list-style-type: none;
+    padding: 0;
+    background-color: white;
+}
+li 
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 1px;
+    background-color: cadetblue;
+    color: white;
+    font-size: 1em;
+    line-height: 1.5;
+    cursor: pointer;
+}
+.jumbotron,.forecast-card
 {
     color: white;
     background-color: cadetblue;
@@ -22,6 +39,34 @@ h3
 
 .forcast-card
 {
-    padding-bottom: 10px;
-    padding-left: 5px;
+    padding: 10px;
+    
+}
+
+.uvi
+{
+    padding:5px;
+    border-style: ridge;
+}
+
+.favorable
+{
+    background-color: darkgreen;
+    color: white;
+    
+}
+.moderate
+{
+    background-color: yellow;
+    color:black;
+    
+}
+.severe
+{
+    background-color: red;
+    color: black;
+}
+.forcast-card-image
+{
+    width : 50px;
 }

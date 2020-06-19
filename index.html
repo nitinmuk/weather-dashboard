@@ -31,89 +31,67 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3" id="search-pane">
-                    <form>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for a City here...">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit">
-                                    <i class="glyphicon glyphicon-search"></i>
-                                </button>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <form>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search for a City here...">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default" type="submit">
+                                                <i class="glyphicon glyphicon-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <ul id="city-list"></ul>
                             </div>
                         </div>
-                    </form>
-                    <ul id="city-list"></ul>
+                    </div>
                 </div>
                 <div class="col-md-1"></div>
-                <div class="col-md-8" id="current-day-pane">
-                    <div>
-                        <h2>City Name <span>(Date)</span><span><img id="weather-symbol" src="#"
-                                    alt="weather symbol"></span>
-                        </h2>
-                        <p>Temperature:<span id="current-temp"></span></p>
-                        <p>Humidity: <span id="current-humidity"></span></p>
-                        <p>Wind Speed: <span id="current-wind-speed"></span></p>
-                        <p>UV Index: <span id="current-uv-index"></span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4"></div>
                 <div class="col-md-8">
-                    <h3>5-Day Forecast:</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-8">
-                    <div class="col-md-2">
-                        <div class="card forcast-card">
-                            <div class="card-body">
-                                <h5 class="card-title forcast-card-title"></h5>
-                                <img class="forcast-card-image" src="" alt="">
-                                <p class="card-text">Temp: <span></span></p>
-                                <p class="card-text">Humidity: <span></span></p>
-                            </div>
+                    <div class="row" id="current-day-pane">
+                        <div>
+                            <h3></h3>
+                            <p>Temperature:<span id="current-temp"></span>&#176;C</p>
+                            <p>Humidity: <span id="current-humidity"></span>%</p>
+                            <p>Wind Speed: <span id="current-wind-speed"></span>meter/sec</p>
+                            <p>UV Index: <span id="current-uv-index" class="uvi"></span></p>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <div class="card forcast-card">
-                            <div class="card-body">
-                                <h5 class="card-title forcast-card-title"></h5>
-                                <img class="forcast-card-image" src="" alt="">
-                                <p class="card-text">Temp: <span></span></p>
-                                <p class="card-text">Humidity: <span></span></p>
+                    <div class="row">
+                        <h3>5-Day Forecast:</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="card" id="forecast-day1">
+                                <div class="card-body forecast-card">                                                                        
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card forcast-card">
-                            <div class="card-body">
-                                <h5 class="card-title forcast-card-title"></h5>
-                                <img class="forcast-card-image" src="" alt="">
-                                <p class="card-text">Temp: <span></span></p>
-                                <p class="card-text">Humidity: <span></span></p>
+                        <div class="col-md-2">
+                            <div class="card forecast-card" id="forecast-day2">
+                                <div class="card-body">                                    
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card forcast-card">
-                            <div class="card-body">
-                                <h5 class="card-title forcast-card-title"></h5>
-                                <img class="forcast-card-image" src="" alt="">
-                                <p class="card-text">Temp: <span></span></p>
-                                <p class="card-text">Humidity: <span></span></p>
+                        <div class="col-md-2">
+                            <div class="card forecast-card" id="forecast-day3">
+                                <div class="card-body">                                    
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card forcast-card">
-                            <div class="card-body">
-                                <h5 class="card-title forcast-card-title"></h5>
-                                <img class="forcast-card-image" src="" alt="">
-                                <p class="card-text">Temp: <span></span></p>
-                                <p class="card-text">Humidity: <span></span></p>
+                        <div class="col-md-2">
+                            <div class="card forecast-card" id="forecast-day4">
+                                <div class="card-body">                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card forecast-card" id="forecast-day5">
+                                <div class="card-body">                                    
+                                </div>
                             </div>
                         </div>
                     </div>
