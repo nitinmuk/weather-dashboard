@@ -63,7 +63,6 @@ $(document).ready(function () {
             method: "GET"
         })
             .then(function (response) {
-                // console.log(response);
                 const h3Element = $("#current-day-pane").children("div").children("h3");
                 h3Element.text(response.name);
                 const DateElement = $("<span></span>");
@@ -124,14 +123,10 @@ $(document).ready(function () {
         })
             .then(function (forecastResponse) {
                 emptyForeCastCards();
-                console.log(forecastResponse.daily);
                 var date = parseInt(moment().format("DD")) + 1;
-                console.log(date);
                 var count = 1;
                 $.each(forecastResponse.daily, function (index, item) {
                     if (count <= 5 && date == moment.unix(item.dt).format("DD")) {
-                        console.log(date);
-                        console.log(count);
                         renderforecastDate(item, count);
                         count++;
                         date++;
