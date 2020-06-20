@@ -145,7 +145,7 @@ $(document).ready(function () {
     }
     /**
      * associates input class with uv index element so that it reflects 
-     * appropriate color. green is for favorable, yello for moderate and
+     * appropriate color. green is for favorable, yellow for moderate and
      * red for severe.
      * @param {current class to be assocaited with uv index} colorClass 
      */
@@ -154,7 +154,6 @@ $(document).ready(function () {
         $("#current-uv-index").removeClass("moderate");
         $("#current-uv-index").removeClass("severe");
         $("#current-uv-index").addClass(colorClass);
-
     }
 
     /**
