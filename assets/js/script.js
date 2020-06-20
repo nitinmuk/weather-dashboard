@@ -25,7 +25,11 @@ $(document).ready(function () {
     initSearchHistory();
     renderSearchHistory();
     if (searchHistory && searchHistory.length) {
+        showWeatherDetailPane();
         fetchAndRenderCityWeather(searchHistory[0]);
+    }
+    else {
+        hideWeatherDetailPane();
     }
     function initSearchHistory() {
         const savedHistory = localStorage.getItem("searchHistory");
@@ -53,38 +57,43 @@ $(document).ready(function () {
     }
 
     function fetchAndRenderCityWeather(city) {
-        renderCurrentWeather(city);
+        fetchCurrentCityWeather(city);
+        showWeatherDetailPane();
     }
-    function renderCurrentWeather(city) {
+    function fetchCurrentCityWeather(city) {
         const currentWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q="
             + city + "&appid=" + apiKey;
         $.ajax({
             url: currentWeatherURL,
             method: "GET"
         })
-            .then(function (response) {
-                const h3Element = $("<h3></h3>");
-                const currentDayDiv = $("#current-day-pane").children("div");
-                h3Element.text(response.name);
-                currentDayDiv.prepend(h3Element);
-                const DateElement = $("<span></span>");
-                const epoch = moment.unix(response.dt);
-                DateElement.text("(" + epoch.format("DD/MM/YYYY") + ")");
-                h3Element.append(DateElement);
-                const imageEl = $("<img>");
-                console.log(response.weather[0]);
-                const iconURL = "https://openweathermap.org/img/wn/"
-                    + response.weather[0].icon + "@2x.png";
-                imageEl.attr("src", iconURL);
-                imageEl.attr("alt", response.weather[0].description);
-                h3Element.append(imageEl);
-                const tempC = parseInt(response.main.temp) - 273.15;
-                $("#current-temp").text(" " + tempC.toFixed(2) + " ");
-                $("#current-humidity").text(" " + response.main.humidity);
-                $("#current-wind-speed").text(" " + response.wind.speed + " ");
-                renderUVIndex(response);
-                renderForecastWeather(response.coord.lat, response.coord.lon);
-            });
+            .then(renderCurrentWeather);
+
+    }
+    function renderCurrentWeather(response) {
+
+        console.log(response);
+        const h3Element = $("<h3></h3>");
+        const currentDayDiv = $("#current-day-pane").children("div");
+        h3Element.text(response.name);
+        currentDayDiv.prepend(h3Element);
+        const DateElement = $("<span></span>");
+        const epoch = moment.unix(response.dt);
+        DateElement.text("(" + epoch.format("DD/MM/YYYY") + ")");
+        h3Element.append(DateElement);
+        const imageEl = $("<img>");
+        console.log(response.weather[0]);
+        const iconURL = "https://openweathermap.org/img/wn/"
+            + response.weather[0].icon + "@2x.png";
+        imageEl.attr("src", iconURL);
+        imageEl.attr("alt", response.weather[0].description);
+        h3Element.append(imageEl);
+        const tempC = parseInt(response.main.temp) - 273.15;
+        $("#current-temp").text(" " + tempC.toFixed(2) + " ");
+        $("#current-humidity").text(" " + response.main.humidity);
+        $("#current-wind-speed").text(" " + response.wind.speed + " ");
+        renderUVIndex(response);
+        renderForecastWeather(response.coord.lat, response.coord.lon);
     }
 
     function renderUVIndex(response) {
@@ -163,6 +172,20 @@ $(document).ready(function () {
         for (var i = 1; i <= 5; i++) {
             $("#forecast-day" + i).children("div.card-body").empty();
         }
+    }
+
+    /**
+     * hides the main pane which holds weather details for current and future
+     */
+    function hideWeatherDetailPane() {
+        $("#weather-detail-pane").addClass("hide");
+    }
+
+    /**
+     * shows the main pane which holds weather details for current and future
+     */
+    function showWeatherDetailPane() {
+        $("#weather-detail-pane").removeClass("hide");
     }
 });
 
