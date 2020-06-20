@@ -25,7 +25,6 @@ $(document).ready(function () {
     initSearchHistory();
     renderSearchHistory();
     if (searchHistory && searchHistory.length) {
-        showWeatherDetailPane();
         fetchAndRenderCityWeather(searchHistory[0]);
     }
     else {
@@ -58,7 +57,6 @@ $(document).ready(function () {
 
     function fetchAndRenderCityWeather(city) {
         fetchCurrentCityWeather(city);
-        showWeatherDetailPane();
     }
     function fetchCurrentCityWeather(city) {
         const currentWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q="
@@ -73,6 +71,7 @@ $(document).ready(function () {
     function renderCurrentWeather(response) {
 
         console.log(response);
+        $("#current-day-pane").children("div").children("h3").remove();
         const h3Element = $("<h3></h3>");
         const currentDayDiv = $("#current-day-pane").children("div");
         h3Element.text(response.name);
@@ -94,6 +93,7 @@ $(document).ready(function () {
         $("#current-wind-speed").text(" " + response.wind.speed + " ");
         renderUVIndex(response);
         renderForecastWeather(response.coord.lat, response.coord.lon);
+        showWeatherDetailPane();
     }
 
     function renderUVIndex(response) {
