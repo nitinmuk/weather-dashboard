@@ -63,16 +63,20 @@ $(document).ready(function () {
             method: "GET"
         })
             .then(function (response) {
-                const h3Element = $("#current-day-pane").children("div").children("h3");
+                const h3Element = $("<h3></h3>");
+                const currentDayDiv = $("#current-day-pane").children("div");
                 h3Element.text(response.name);
+                currentDayDiv.prepend(h3Element);
                 const DateElement = $("<span></span>");
                 const epoch = moment.unix(response.dt);
                 DateElement.text("(" + epoch.format("DD/MM/YYYY") + ")");
                 h3Element.append(DateElement);
                 const imageEl = $("<img>");
+                console.log(response.weather[0]);
                 const iconURL = "https://openweathermap.org/img/wn/"
                     + response.weather[0].icon + "@2x.png";
-                imageEl.attr("src", iconURL)
+                imageEl.attr("src", iconURL);
+                imageEl.attr("alt", response.weather[0].description);
                 h3Element.append(imageEl);
                 const tempC = parseInt(response.main.temp) - 273.15;
                 $("#current-temp").text(" " + tempC.toFixed(2) + " ");
