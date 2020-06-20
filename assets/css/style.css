@@ -23,6 +23,13 @@ li
     line-height: 1.5;
     cursor: pointer;
 }
+/*
+* reducing opacity for all clickable entity when user hover mouse on it to have better user experience.
+*/
+li:hover
+{
+    opacity : 0.75;
+}
 .jumbotron,.forecast-card
 {
     color: white;
