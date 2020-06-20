@@ -197,16 +197,17 @@ $(document).ready(function () {
         const dayEl = $("#forecast-day" + count).children("div.card-body");
         const iconURL = "https://openweathermap.org/img/wn/"
             + item.weather[0].icon + "@2x.png";
-        dayEl.append($("<h5></h5>").text(moment.unix(item.dt).format("DD/MM/YYYY")))
+        dayEl.append($("<h5></h5>").text(String.fromCharCode(160) +
+            moment.unix(item.dt).format("DD/MM/YYYY")))
         const imageEl = $("<img>");
         imageEl.attr("src", iconURL);
         imageEl.attr("alt", "weather icon");
         imageEl.addClass("forcast-card-image");
         dayEl.append(imageEl);
         const tempC = parseInt(item.temp.day) - 273.15;
-        dayEl.append($("<p></p>").text("Temp: " + tempC.toFixed(2)
+        dayEl.append($("<p></p>").text(String.fromCharCode(160) +"Temp: " + tempC.toFixed(1)
             + " " + String.fromCharCode(176) + "C"));
-        dayEl.append($("<p></p>").text("Humidity: " + item.humidity + "%"));
+        dayEl.append($("<p></p>").text(String.fromCharCode(160) +"Humidity: " + item.humidity + "%"));
 
     }
 
