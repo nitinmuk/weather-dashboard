@@ -91,7 +91,6 @@ $(document).ready(function () {
      */
     function renderCurrentWeather(response) {
 
-        console.log(response);
         $("#current-day-pane").children("div").children("h3").remove();
         const h3Element = $("<h3></h3>");
         const currentDayDiv = $("#current-day-pane").children("div");
@@ -102,7 +101,6 @@ $(document).ready(function () {
         DateElement.text("(" + epoch.format("DD/MM/YYYY") + ")");
         h3Element.append(DateElement);
         const imageEl = $("<img>");
-        console.log(response.weather[0]);
         const iconURL = "https://openweathermap.org/img/wn/"
             + response.weather[0].icon + "@2x.png";
         imageEl.attr("src", iconURL);
@@ -204,9 +202,9 @@ $(document).ready(function () {
         imageEl.addClass("forcast-card-image");
         dayEl.append(imageEl);
         const tempC = parseInt(item.temp.day) - 273.15;
-        dayEl.append($("<p></p>").text(String.fromCharCode(160) +"Temp: " + tempC.toFixed(1)
+        dayEl.append($("<p></p>").text(String.fromCharCode(160) + "Temp: " + tempC.toFixed(1)
             + " " + String.fromCharCode(176) + "C"));
-        dayEl.append($("<p></p>").text(String.fromCharCode(160) +"Humidity: " + item.humidity + "%"));
+        dayEl.append($("<p></p>").text(String.fromCharCode(160) + "Humidity: " + item.humidity + "%"));
 
     }
 
