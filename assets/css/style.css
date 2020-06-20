@@ -42,13 +42,15 @@ li
     padding: 10px;
     
 }
-
 .uvi
 {
     padding:5px;
     border-style: ridge;
 }
-
+/*
+* favorable, moderate and severe are used to display
+* correct color code for uv index display.
+*/
 .favorable
 {
     background-color: darkgreen;
@@ -66,10 +68,16 @@ li
     background-color: red;
     color: black;
 }
+/*
+* keeping weather image icon smaller size for future forecast pane.
+*/
 .forcast-card-image
 {
     width : 50px;
 }
+/*
+* used to hide any elemnt in the application.
+*/
 .hide
 {
     display:none;
